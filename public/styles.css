@@ -6,16 +6,17 @@
 /* 1. Card Styles */
 .glassmorph {
   max-width: 420px;
-  background: rgba(255, 255, 255, 0.70);
+  background: rgba(255, 255, 255, 0.50);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.1px)
 }
 
 .custom-bg {
-  background-image: url("./background.png");
+  background-image: url("./background.jpg");
   /* Image taken from https://i.redd.it/89afwhtwnm671.png */
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: cover;
   background-attachment: fixed;
   width: 100%;
 }
