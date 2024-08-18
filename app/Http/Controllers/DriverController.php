@@ -14,7 +14,11 @@ class DriverController extends Controller
      */
     public function index()
     {
-        //
+        $drivers = Driver::with('car')->get();
+
+        return view('drivers.index', [
+            'drivers' => $drivers
+        ]);
     }
 
     /**
@@ -38,7 +42,8 @@ class DriverController extends Controller
      */
     public function show(Driver $driver)
     {
-        //
+        $car = $driver->car;
+        return view('drivers.show', compact('driver', 'car'));
     }
 
     /**
