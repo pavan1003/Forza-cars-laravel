@@ -14,11 +14,11 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <!-- Home link -->
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('cars.index') }}">Cars</a>
+                    <a class="nav-link {{ request()->routeIs('cars.index') ? 'active' : '' }}" aria-current="page" href="{{ route('cars.index') }}">Cars</a>
                 </li>
                 <!-- Drivers link -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('drivers.index') }}">Drivers</a>
+                    <a class="nav-link {{ request()->routeIs('drivers.index') ? 'active' : '' }}" href="{{ route('drivers.index') }}">Drivers</a>
                 </li>
             </ul>
         </div>
