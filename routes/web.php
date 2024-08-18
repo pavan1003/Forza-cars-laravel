@@ -21,8 +21,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'admin'], function() {
         Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
-        Route::resource('/admin/cars', 'Admin\CarController');
-        Route::resource('/admin/drivers', 'Admin\DriverController');
+        Route::resource('/car/show', CarController::class);
+        Route::resource('/car/show', DriverController::class);
     });
 });
 
