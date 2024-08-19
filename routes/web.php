@@ -13,6 +13,9 @@ Route::resource('cars', CarController::class);
 
 Route::resource('drivers', DriverController::class);
 
+Route::put('/cars/{car}', [CarController::class, 'update'])->name('cars.update');
+Route::put('/drivers/{driver}', [DriverController::class, 'update'])->name('drivers.update');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

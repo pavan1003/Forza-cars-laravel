@@ -43,8 +43,11 @@
                                     class="btn btn-sm btn-primary">Update</a>
                             </div>
                             <div class="col-sm-4">
-                                <a href="{{ route('drivers.destroy', $driver->driver_id) }}"
-                                    class="btn btn-sm btn-danger">Delete</a>
+                                <form action="{{ route('drivers.destroy', $driver->driver_id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this driver?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
                             </div>
                             @endauth
                         </div>

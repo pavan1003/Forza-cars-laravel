@@ -77,7 +77,11 @@
                                 <a href="{{ route('cars.edit', $car->id) }}" class="btn btn-sm btn-primary">Update</a>
                             </div>
                             <div class="col-sm-4">
-                                <a href="{{ route('cars.destroy', $car->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                                <form action="{{ route('cars.destroy', $car->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this car?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
                             </div>
                             @endauth
                         </div>

@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Session;
 
 class CarController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -33,11 +39,9 @@ class CarController extends Controller
      */
     public function store(StoreCarRequest $request)
     {
-        $car = car::create($request->validated());
+        $car = Car::create($request->validated());
 
-        $car->courses()->attach($request->course);
-
-        Session::flash('success', 'car added successfully');
+        Session::flash('success', 'Car added successfully');
         return redirect()->route('cars.index');
     }
 
@@ -62,7 +66,13 @@ class CarController extends Controller
      */
     public function update(UpdateCarRequest $request, Car $car)
     {
-        //
+        $this->authorize('update', $car);
+
+        // Proceed with update
+        $car->update($request->validated());
+
+        return redirect()->route('cars.index')->with('success', 'Car updated successfully');
+
     }
 
     /**
@@ -70,6 +80,9 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        $car->delete();
+
+        Session::flash('success', 'Car deleted successfully');
+        return redirect()->route('cars.index');
     }
 }

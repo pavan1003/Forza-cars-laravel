@@ -6,9 +6,17 @@ use App\Models\Driver;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDriverRequest;
 use App\Http\Requests\UpdateDriverRequest;
+use Illuminate\Support\Facades\Session;
+
 
 class DriverController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -26,7 +34,7 @@ class DriverController extends Controller
      */
     public function create()
     {
-        //
+        return view('drivers.create');
     }
 
     /**
@@ -34,7 +42,10 @@ class DriverController extends Controller
      */
     public function store(StoreDriverRequest $request)
     {
-        //
+        $driver = Driver::create($request->validated());
+
+        Session::flash('success', 'Driver added successfully');
+        return redirect()->route('drivers.index');
     }
 
     /**
@@ -51,7 +62,7 @@ class DriverController extends Controller
      */
     public function edit(Driver $driver)
     {
-        //
+        return view('drivers.edit', compact('driver'));
     }
 
     /**
@@ -59,7 +70,12 @@ class DriverController extends Controller
      */
     public function update(UpdateDriverRequest $request, Driver $driver)
     {
-        //
+        $this->authorize('update', $driver);
+
+        // Proceed with update
+        $driver->update($request->validated());
+
+        return redirect()->route('drivers.index')->with('success', 'Driver updated successfully');
     }
 
     /**
@@ -67,6 +83,9 @@ class DriverController extends Controller
      */
     public function destroy(Driver $driver)
     {
-        //
+        $driver->delete();
+
+        Session::flash('success', 'Driver deleted successfully');
+        return redirect()->route('drivers.index');
     }
 }
