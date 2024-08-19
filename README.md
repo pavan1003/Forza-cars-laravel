@@ -42,6 +42,17 @@ Here are the steps to clone a Laravel project, build it, and run it locally:
         ```
     - Open the `.env` file and configure your database and other settings.
 
+Change the values in the `.env` file to match your database configuration.
+
+```bash
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=forzacars
+    DB_USERNAME=your_username
+    DB_PASSWORD=your_password
+```
+
 5. **Generate Application Key**:
 
     ```bash
@@ -51,10 +62,35 @@ Here are the steps to clone a Laravel project, build it, and run it locally:
 6. **Run Migrations** (if your project uses a database):
 
     ```bash
-    php artisan migrate
+    php artisan migrate:refresh
     ```
 
-7. **Start the Development Server**:
+7. **Install Frontend Dependencies**
+
+    ```bash
+    npm install
+    ```
+
+8. **Build Frontend**:
+
+    ```bash
+    npm run build
+    ```
+
+9. **Start the Development Server**:
+
+    ```bash
+    npm run dev
+    ```
+
+10. **Clear Cache**
+
+    ```bash
+    php artisan config:clear
+    php artisan cache:clear
+    ```
+
+11. **Start the Development Server**:
     ```bash
     php artisan serve
     ```
