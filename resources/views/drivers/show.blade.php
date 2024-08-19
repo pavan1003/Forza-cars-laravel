@@ -8,7 +8,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container pb-5">
     <div class="card mw-100 glassmorph p-0 rounded-5">
         <div class="row g-0">
             <div class="col-md-12 col-sm-12">
