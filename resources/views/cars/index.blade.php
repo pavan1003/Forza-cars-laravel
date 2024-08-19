@@ -1,4 +1,5 @@
-@extends('layouts/app')
+@extends(auth()->check() ? 'layouts/admin' : 'layouts/app')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -71,6 +72,14 @@
                             <div class="col-sm-4">
                                 <a href="{{ route('cars.show', $car -> id) }}" class="btn btn-sm btn-info">View</a>
                             </div>
+                            @auth
+                            <div class="col-sm-4">
+                                <a href="{{ route('cars.edit', $car->id) }}" class="btn btn-sm btn-primary">Update</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="{{ route('cars.destroy', $car->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                            </div>
+                            @endauth
                         </div>
                     </div>
                 </div>

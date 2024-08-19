@@ -1,4 +1,4 @@
-@extends('layouts/app')
+@extends('layouts/admin')
 @section('content')
 
 <div class="container-fluid">
@@ -12,7 +12,7 @@
 </div>
 
 <div class="container-fluid pb-5">
-    <div class="container text-white glassmorph rounded-5">
+    <div class="container rounded-5">
         <!-- Form to add a new car -->
         <form action="{{ route('cars.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
