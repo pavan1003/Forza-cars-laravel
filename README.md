@@ -114,6 +114,22 @@ Change the values in the `.env` file to match your database configuration.
 
 Welcome to the demo of our web application. Below are some screenshots showcasing various features and functionalities.
 
+## Cars Listing Page
+
+![Cars Listing Page](./demo/cars-list.png)
+
+## Drivers Listing Page
+
+![Drivers Listing Page](./demo/drivers-list.png)
+
+## Car Details Page
+
+![Car Details Page](./demo/car-detail.png)
+
+## Driver Details Page
+
+![Driver Details Page](./demo/driver-detail.png)
+
 ## Register Page
 
 ![Register Page](./demo/registration.png)
@@ -130,13 +146,13 @@ Welcome to the demo of our web application. Below are some screenshots showcasin
 
 ![Verify Email Page](./demo/verify-email.png)
 
-## Home Page - Cars Page Listing
+## Cars Listing Page - ADMIN
 
-![Home Page](./demo/cars.png)
+![Home Page Admin](./demo/admin-cars-list.png)
 
-## Drivers Page
+## Drivers Listing Page - ADMIN
 
-![Drivers Page](./demo/drivers.png)
+![Drivers Page Admin](./demo/admin-drivers-list.png)
 
 ## Admin Dashboard
 
