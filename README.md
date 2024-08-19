@@ -1,6 +1,6 @@
 ## Project Overview
 
-ForzaCars CMS is a Content Management System specifically tailored for showcasing and managing forza game cars related content. It is built using PHP and MySQL and is designed to allow easy management of car listings and other related data. The system includes both a backend management dashboard and a frontend website that displays content pulled from the CMS. Additionally, it includes an admin dashboard that allows for easy management of user accounts, car listings, and other related data.
+ForzaCars CMS is a Content Management System specifically tailored for showcasing and managing forza game cars related content. It is built using Laravel and MySQL and is designed to allow easy management of car listings and other related data. The system includes both a backend management dashboard and a frontend website that displays content pulled from the CMS. Additionally, it includes an admin dashboard that allows for easy management of user accounts, car listings, and other related data.
 
 ## Features
 
@@ -27,17 +27,14 @@ Here are the steps to clone a Laravel project, build it, and run it locally:
     - Navigate to the directory where you want to store the project.
     - Use the `git clone` command followed by the repository URL:
         ```bash
-        git clone <repository-url>
+        git clone https://github.com/pavan1003/Forza-cars-larave
         ```
-    - Replace `<repository-url>` with the URL of the GitHub repository.
 
 2. **Navigate to the Project Directory**:
 
     ```bash
-    cd <project-name>
+    cd Forza-cars-larave
     ```
-
-    - Replace `<project-name>` with the name of your project directory.
 
 3. **Install Dependencies**:
 
